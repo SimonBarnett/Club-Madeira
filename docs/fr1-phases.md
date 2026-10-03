@@ -6,5 +6,5 @@
 | Private Git repo naming | **in repo** | `repo_name_for_go_id` |
 | Email campaign setup | **in repo (FR #2)** | `email_setup` + DNS/Git gate |
 | Twitter / X API setup | **in repo (FR #3)** | `x_setup.pricing_brief` + ack gate |
-| xAI key provisioning | follow-up FR | customer-owned tokens |
+| xAI key provisioning | **in repo (FR #4)** | `xai_setup` customer-owned + redact |
 | Skill book PWA | **in repo (FR #5)** | `pwa/skill-book` + delivery URL helper |

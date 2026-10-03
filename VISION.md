@@ -25,7 +25,7 @@ TXT forms accepted:
 - Full voice agent runtime (PWA shell + delivery link shipped in FR #5; voice runtime later).
 - Live ESP HTTP sends (FR #2 ships checklist + credential template; customer still configures the vendor in browser).
 - Live X API HTTP calls (FR #3 ships pricing ack + credential path; customer still signs up in browser).
-- Live xAI billing / credit purchase automation (follow-up FR).
+- Live xAI billing / credit purchase automation (FR #4 ships policy + checklist; customer still buys credits in browser).
 
 ## LOCKED
 
