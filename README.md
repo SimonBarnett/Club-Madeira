@@ -25,4 +25,4 @@ python -m pytest tests -q
 
 ## FR #1 status
 
-Foundation + X pricing gate + skill-book PWA (online-only) in tree. Email / xAI provisioning remain follow-up FRs (#2 / #4).
+Foundation + X pricing gate + skill-book PWA + email setup helpers in tree. xAI provisioning remains follow-up FR (#4).
