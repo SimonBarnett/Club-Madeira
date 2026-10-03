@@ -50,3 +50,33 @@ def test_setup_checklist_orders_dns_git_before_vendor():
     assert steps[0].lower().startswith("dns") or "dns" in steps[0].lower()
     assert any("repo" in s.lower() or "git" in s.lower() for s in steps[:3])
     assert any("provider" in s.lower() or "send" in s.lower() for s in steps)
+
+
+def test_unsupported_provider_raises():
+    try:
+        es.provider_config_template("not-a-real-esp")
+        assert False, "expected ValueError"
+    except ValueError as e:
+        assert "unsupported" in str(e).lower()
+
+
+def test_provider_template_secret_fields_are_empty_placeholders():
+    for name in es.supported_providers():
+        cfg = es.provider_config_template(name)
+        assert cfg["fields"]["api_key"] == ""
+        assert cfg["fields"]["from_email"] == ""
+        assert "SG." not in str(cfg)
+        assert "sk-" not in str(cfg)
+
+
+def test_gate_fails_closed_on_blank_domain():
+    ok, why = es.can_start_email_setup("", "GO-42", repo_ready=True)
+    assert ok is False
+    assert why == "dns_gate_failed"
+
+
+def test_checklist_has_no_embedded_credentials():
+    blob = "\n".join(es.setup_checklist()).lower()
+    assert "api_key=" not in blob
+    assert "password=" not in blob
+    assert "bearer " not in blob
