@@ -24,7 +24,7 @@ TXT forms accepted:
 
 - Full voice agent runtime and PWA UI (follow-up FR).
 - Live email-campaign vendor wiring (follow-up FR).
-- Live X Premium signup automation (follow-up FR).
+- Live X API HTTP calls (FR #3 ships pricing ack + credential path; customer still signs up in browser).
 - Live xAI billing / credit purchase automation (follow-up FR).
 
 ## LOCKED

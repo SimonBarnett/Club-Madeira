@@ -24,7 +24,10 @@ python -c "from club_madeira.dns_gate import verify_go_id; print(verify_go_id('e
 1. **DNS verification** — `verify_go_id(domain, go_id)`. Fail closed if missing/mismatch. Re-check later (DNS TTL can linger).
 2. **Git working-data repo** — create private repo `repo_name_for_go_id(go_id)` under the customer's GitHub; deploy key or fine-grained token scoped to that repo only.
 3. **Email campaign setup** — configure customer tooling (follow-up FR).
-4. **Twitter / X** — customer signs up for X API (pay-per-use as of 2026); surface pricing before mid-setup paywall (follow-up FR).
+4. **Twitter / X** (FR #3) — **before** any token paste:
+   - Print `club_madeira.x_setup.pricing_brief()` (2026 pay-per-use; Basic/Pro retired).
+   - Require `acknowledge_pricing` / `can_continue_past_pricing` ok.
+   - Customer creates X developer app; store tokens only at `credentials/x-api-tokens.json` in the private Go-ID repo (`credential_paths_for_go_id`). Never log secrets.
 5. **xAI API key** — customer creates their own xAI account/credits; skill book runs on **their** tokens only (follow-up FR).
 6. **Skill book PWA** — deliver installable web skill book link after successful onboarding (follow-up FR). Online-only OK for v1.
 
