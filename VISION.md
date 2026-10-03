@@ -22,7 +22,7 @@ TXT forms accepted:
 
 ## Out of scope for FR #1 foundation PR
 
-- Full voice agent runtime and PWA UI (follow-up FR).
+- Full voice agent runtime (PWA shell + delivery link shipped in FR #5; voice runtime later).
 - Live email-campaign vendor wiring (follow-up FR).
 - Live X API HTTP calls (FR #3 ships pricing ack + credential path; customer still signs up in browser).
 - Live xAI billing / credit purchase automation (follow-up FR).

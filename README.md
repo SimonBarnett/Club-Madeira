@@ -25,4 +25,4 @@ python -m pytest tests -q
 
 ## FR #1 status
 
-Foundation shipped: vision, skill playbook, DNS Go-ID gate + tests. Email / X / xAI / PWA are follow-up FRs.
+Foundation + X pricing gate + skill-book PWA (online-only) in tree. Email / xAI provisioning remain follow-up FRs (#2 / #4).

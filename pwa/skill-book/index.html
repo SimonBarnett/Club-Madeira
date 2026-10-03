@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Club Madeira Skill Book</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; background: #0b1220; color: #e8eefc; }
+    main { max-width: 40rem; margin: 2rem auto; padding: 0 1rem; }
+    label { display: block; margin: 1rem 0 0.35rem; }
+    input { width: 100%; padding: 0.6rem; border-radius: 0.4rem; border: 1px solid #334; background: #121a2b; color: inherit; }
+    button { margin-top: 1rem; padding: 0.6rem 1rem; border-radius: 0.4rem; border: 0; background: #3b82f6; color: white; cursor: pointer; }
+    .note { opacity: 0.8; font-size: 0.9rem; }
+    code { background: #121a2b; padding: 0.1rem 0.3rem; border-radius: 0.25rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Club Madeira Skill Book</h1>
+    <p class="note">Online-only v1. Installable as a PWA on Windows and Mac. Your xAI API key stays on this device — never sent to Club Madeira servers.</p>
+    <p id="ctx" class="note"></p>
+    <label for="xai">xAI API key</label>
+    <input id="xai" type="password" autocomplete="off" placeholder="xai-..." />
+    <button id="save" type="button">Save key on this device</button>
+    <p id="status" class="note"></p>
+  </main>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js").catch(() => {});
+    }
+    const params = new URLSearchParams(location.search);
+    const go = params.get("go") || "";
+    const domain = params.get("domain") || "";
+    document.getElementById("ctx").textContent =
+      (go || domain) ? ("Go ID: " + go + (domain ? " · domain: " + domain : "")) : "";
+    const keyName = "club-madeira-xai-key";
+    const input = document.getElementById("xai");
+    const status = document.getElementById("status");
+    try {
+      const existing = localStorage.getItem(keyName);
+      if (existing) status.textContent = "A key is already saved in localStorage on this device.";
+    } catch (_) {}
+    document.getElementById("save").onclick = () => {
+      const v = (input.value || "").trim();
+      if (!v) { status.textContent = "Enter a key first."; return; }
+      try {
+        localStorage.setItem(keyName, v);
+        input.value = "";
+        status.textContent = "Saved in localStorage. It stays on this device.";
+      } catch (e) {
+        status.textContent = "Could not save locally.";
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Club Madeira Skill Book",
+  "short_name": "ClubMadeira",
+  "description": "Post-onboarding Club Madeira skill book (online-only v1).",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "offline": false,
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
