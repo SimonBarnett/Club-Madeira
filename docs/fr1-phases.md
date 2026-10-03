@@ -5,6 +5,6 @@
 | DNS Go-ID TXT gate | **in repo** | `src/club_madeira/dns_gate.py` |
 | Private Git repo naming | **in repo** | `repo_name_for_go_id` |
 | Email campaign setup | follow-up FR | vendor wiring |
-| Twitter / X API setup | follow-up FR | 2026 pay-per-use pricing |
+| Twitter / X API setup | **in repo (FR #3)** | `x_setup.pricing_brief` + ack gate |
 | xAI key provisioning | follow-up FR | customer-owned tokens |
 | Skill book PWA | follow-up FR | online-only v1 |
