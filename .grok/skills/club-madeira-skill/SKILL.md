@@ -49,4 +49,8 @@ python -c "from club_madeira.dns_gate import verify_go_id; print(verify_go_id('e
 ## Code
 
 - `src/club_madeira/dns_gate.py` — parse / verify / repo naming
-- `tests/test_dns_gate.py` — unit gates
+- `src/club_madeira/email_setup.py` — FR #2 provider templates after DNS+Git
+- `src/club_madeira/x_setup.py` — FR #3 X pricing ack + credential paths
+- `src/club_madeira/xai_setup.py` — FR #4 customer-owned xAI key policy + redact
+- `src/club_madeira/skill_book.py` — FR #5 PWA delivery URL
+- `tests/` — unit + hostile MRB coverage
