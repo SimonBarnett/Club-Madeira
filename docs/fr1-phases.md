@@ -7,4 +7,4 @@
 | Email campaign setup | follow-up FR | vendor wiring |
 | Twitter / X API setup | **in repo (FR #3)** | `x_setup.pricing_brief` + ack gate |
 | xAI key provisioning | follow-up FR | customer-owned tokens |
-| Skill book PWA | follow-up FR | online-only v1 |
+| Skill book PWA | **in repo (FR #5)** | `pwa/skill-book` + delivery URL helper |
