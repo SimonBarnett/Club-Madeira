@@ -28,7 +28,10 @@ python -c "from club_madeira.dns_gate import verify_go_id; print(verify_go_id('e
    - Print `club_madeira.x_setup.pricing_brief()` (2026 pay-per-use; Basic/Pro retired).
    - Require `acknowledge_pricing` / `can_continue_past_pricing` ok.
    - Customer creates X developer app; store tokens only at `credentials/x-api-tokens.json` in the private Go-ID repo (`credential_paths_for_go_id`). Never log secrets.
-5. **xAI API key** — customer creates their own xAI account/credits; skill book runs on **their** tokens only (follow-up FR).
+5. **xAI API key** (FR #4) — after DNS gate (`can_start_xai_setup`):
+   customer creates xAI account/credits in browser; enter key only in skill-book PWA
+   `localStorage` (`device_key_locations`). `storage_policy.store_in_club_madeira_infra`
+   is false. Use `redact_key` in any diagnostics; never log the raw key.
 6. **Skill book PWA** (FR #5) — after DNS gate passes, deliver
    `club_madeira.skill_book.skill_book_delivery_url(...)` pointing at `pwa/skill-book/`.
    Online-only v1 (service worker does not cache). Customer enters xAI key on the PWA page;
