@@ -25,4 +25,8 @@ python -m pytest tests -q
 
 ## FR #1 status
 
+<<<<<<< HEAD
 Foundation + X + email + skill-book PWA + xAI customer-token policy in tree.
+=======
+Foundation + X pricing gate + skill-book PWA + email setup helpers in tree. xAI provisioning remains follow-up FR (#4).
+>>>>>>> origin/main
